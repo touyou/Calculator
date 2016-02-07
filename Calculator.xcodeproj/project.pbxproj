@@ -14,6 +14,8 @@
 		46D971941C5E486200A742A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46D971921C5E486200A742A9 /* LaunchScreen.storyboard */; };
 		46D9719F1C5E486300A742A9 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D9719E1C5E486300A742A9 /* CalculatorTests.swift */; };
 		46D971AA1C5E486300A742A9 /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D971A91C5E486300A742A9 /* CalculatorUITests.swift */; };
+		46D971B81C5E503900A742A9 /* haikei.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 46D971B71C5E503900A742A9 /* haikei.jpg */; };
+		46D971F61C5E5D4200A742A9 /* ios in Resources */ = {isa = PBXBuildFile; fileRef = 46D971F51C5E5D4200A742A9 /* ios */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		46D971A51C5E486300A742A9 /* CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46D971A91C5E486300A742A9 /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		46D971AB1C5E486300A742A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46D971B71C5E503900A742A9 /* haikei.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = haikei.jpg; sourceTree = "<group>"; };
+		46D971F51C5E5D4200A742A9 /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ios; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		46D971881C5E486200A742A9 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				46D971F51C5E5D4200A742A9 /* ios */,
+				46D971B71C5E503900A742A9 /* haikei.jpg */,
 				46D971891C5E486200A742A9 /* AppDelegate.swift */,
 				46D9718B1C5E486200A742A9 /* ViewController.swift */,
 				46D9718D1C5E486200A742A9 /* Main.storyboard */,
@@ -232,9 +238,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46D971B81C5E503900A742A9 /* haikei.jpg in Resources */,
 				46D971941C5E486200A742A9 /* LaunchScreen.storyboard in Resources */,
 				46D971911C5E486200A742A9 /* Assets.xcassets in Resources */,
 				46D9718F1C5E486200A742A9 /* Main.storyboard in Resources */,
+				46D971F61C5E5D4200A742A9 /* ios in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,7 +410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.litech.Calculator;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.touyou.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -413,7 +421,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.litech.Calculator;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.touyou.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -485,6 +493,7 @@
 				46D971B01C5E486300A742A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46D971B11C5E486300A742A9 /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +502,7 @@
 				46D971B31C5E486300A742A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46D971B41C5E486300A742A9 /* Build configuration list for PBXNativeTarget "CalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +511,7 @@
 				46D971B61C5E486300A742A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
