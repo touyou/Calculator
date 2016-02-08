@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 
     // 0~9までの数字選択
     func selects(n: Int) {
-        if operation != 0 {
+        if operation == 0 {
             currentNumber = currentNumber * 10 + n
         } else {
             currentNumber = n
@@ -91,7 +91,7 @@ class ViewController: UIViewController {
         preNumber = currentNumber
         currentNumber = 0
     }
-    // 標準の電卓の仕様にあわせる
+    // 標準の電卓の仕様にあわせる -> 要検討
     @IBAction func equal() {
         if opeNumber == -1 {
             opeNumber = currentNumber
