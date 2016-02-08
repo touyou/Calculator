@@ -11,8 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var label: UILabel!
-    var number: Int = 0
-    var number2: Int = 0
+    
+    var currentNumber: Int = 0
+    var preNumber: Int = 0
+    var opeNumber: Int = -1
     var operation: Int = 0
 
     override func viewDidLoad() {
@@ -25,90 +27,95 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    // 0~9までの数字選択
+    func selects(n: Int) {
+        if operation != 0 {
+            currentNumber = currentNumber * 10 + n
+        } else {
+            currentNumber = n
+        }
+        label.text = String(currentNumber)
+    }
     @IBAction func select1() {
-        number = number * 10 + 1
-        label.text = String(number)
+        selects(1)
     }
     @IBAction func select2() {
-        number = number * 10 + 2
-        label.text = String(number)
+        selects(2)
     }
     @IBAction func select3() {
-        number = number * 10 + 3
-        label.text = String(number)
+        selects(3)
     }
     @IBAction func select4() {
-        number = number * 10 + 4
-        label.text = String(number)
+        selects(4)
     }
     @IBAction func select5() {
-        number = number * 10 + 5
-        label.text = String(number)
+        selects(5)
     }
     @IBAction func select6() {
-        number = number * 10 + 6
-        label.text = String(number)
+        selects(6)
     }
     @IBAction func select7() {
-        number = number * 10 + 7
-        label.text = String(number)
+        selects(7)
     }
     @IBAction func select8() {
-        number = number * 10 + 8
-        label.text = String(number)
+        selects(8)
     }
     @IBAction func select9() {
-        number = number * 10 + 9
-        label.text = String(number)
+        selects(9)
     }
     @IBAction func select0() {
-        number = number * 10 + 0
-        label.text = String(number)
+        selects(0)
     }
-    
+    // 演算、この時点で入力されている数字をpreNumberに格納
     @IBAction func plus() {
         label.text = "0"
         operation = 1
-        number2 = number
-        number = 0
+        preNumber = currentNumber
+        currentNumber = 0
     }
     @IBAction func minus() {
         label.text = "0"
         operation = 2
-        number2 = number
-        number = 0
+        preNumber = currentNumber
+        currentNumber = 0
     }
     @IBAction func times() {
         label.text = "0"
         operation = 3
-        number2 = number
-        number = 0
+        preNumber = currentNumber
+        currentNumber = 0
     }
     @IBAction func divs() {
         label.text = "0"
         operation = 4
-        number2 = number
-        number = 0
+        preNumber = currentNumber
+        currentNumber = 0
     }
+    // 標準の電卓の仕様にあわせる
     @IBAction func equal() {
-        if operation == 1 {
-            label.text = String(number + number2)
-            number = number + number2
-        } else if operation == 2 {
-            label.text = String(number2 - number)
-            number = number2 - number
-        } else if operation == 3 {
-            label.text = String(number * number2)
-            number = number * number2
-        } else if operation == 4 {
-            label.text = String(number2 / number)
-            number = number2 / number
+        if opeNumber == -1 {
+            opeNumber = currentNumber
         }
+        if operation == 1 {
+            label.text = String(currentNumber + preNumber)
+            currentNumber = preNumber + opeNumber
+        } else if operation == 2 {
+            label.text = String(preNumber - currentNumber)
+            currentNumber = preNumber - opeNumber
+        } else if operation == 3 {
+            label.text = String(currentNumber * preNumber)
+            currentNumber = preNumber * opeNumber
+        } else if operation == 4 {
+            label.text = String(preNumber / currentNumber)
+            currentNumber = preNumber / opeNumber
+        }
+        preNumber = currentNumber
+        label.text = String(currentNumber)
     }
     @IBAction func clear() {
-        number = 0
-        number2 = 0
+        currentNumber = 0
+        preNumber = 0
+        opeNumber = -1
         operation = 0
         label.text = "0"
     }
